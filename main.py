@@ -1,15 +1,18 @@
 import requests
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-username = "shaurya9506"
-token = "309846ny53809rytbvw"
+username = os.getenv('USERNAME')
+token = os.getenv('TOKEN')
 pixela_endpoint = "https://pixe.la/v1/users"
 graph_id = "graph1"
 
 #Step 1: We will register ourself and then run the response.post which is used to give the our data to website and the token can be of our choice
 para = {
-    "token":"309846ny53809rytbvw",
-    "username":"shaurya9506",
+    "token":os.getenv('TOKEN'),
+    "username":os.getenv('USERNAME'),
     "agreeTermsOfService":"yes",
     "notMinor":"yes"
 }
